@@ -1,0 +1,20 @@
+{
+  "name": "colors-in-culture",
+  "version": "1.0.0",
+  "description": "gradient generator based off an infographic displaying the meaning of colors in different cultures",
+  "main": "index.html",
+  "scripts": {
+      "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+      "build-css": "node-sass --include-path scss css/main.scss | cleancss -o css/main.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcwelborn/Colors-in-Culture.git"
+  },
+  "author": "gcwelborn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gcwelborn/Colors-in-Culture/issues"
+  },
+  "homepage": "https://github.com/gcwelborn/Colors-in-Culture#readme"
+}

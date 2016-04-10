@@ -1,0 +1,58 @@
+@import 'src/normalize';
+@import 'src/skeleton';
+
+html {
+    /*        position: static;*/
+    background: linear-gradient(to right, rgba(236,240,241,0.85), rgba(236,240,241,0.85)), url(../background.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#header {
+    text-align: center;
+    margin-top: 5vh;
+    .button-primary {
+        background-color: #1A66ED;
+        border: #1A66ED;
+    }
+    h1 {
+        font-size: 1.9em;
+        font-weight: 700;
+    }
+    p {
+        margin-top: -1vh;
+    }
+}
+
+#gradient {
+    margin-top: 5vh;
+    canvas {
+        width: 100%;
+    }
+
+    #mainGradient {
+        height: 40vh;
+        border-radius: 5px;
+        // background: linear-gradient(to right, red, blue);
+    }
+
+    #barGradient {
+        margin-top: 1vh;
+        border-radius: 50px;
+        height: 3vh;
+        // background: linear-gradient(to right, red 50%, blue 50%);
+    }
+}
+
+#controls {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+#css {}

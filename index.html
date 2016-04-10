@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Cultural Color Generator</title>
+    <meta name="description" content="gradient generator based off an infographic displaying the meaning of colors in different cultures">
+    <meta name="author" content="gcwelborn">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="header" class="row">
+            <h1>Colours in Culture: Gradient Generator</h1>
+            <p>Create a gradient of colors to reflect cultural ideas and emotions</p>
+            <a href="http://www.informationisbeautiful.net/visualizations/colours-in-cultures/"
+            class="button button-primary">InfoGraphic</a>
+        </div>
+        <div id="gradient">
+            <canvas id="mainGradient"></canvas>
+            <canvas id="barGradient"></canvas>
+        </div>
+        <div id="controls" class="row">
+            <div class="four columns">
+                <label for="cultureInput">Culture</label>
+                <select class="u-full-width" id="cultureInput"></select>
+            </div>
+            <div class="four columns">
+                <label for="leftColor">Left Color</label>
+                <select class="u-full-width" id="leftColor"></select>
+            </div>
+            <div class="four columns">
+                <label for="rightColor">Right Color</label>
+                <select class="u-full-width" id="rightColor"></select>
+            </div>
+        </div>
+        <div id="css"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous">
+            </script>
+    <script src="js/cultures/western.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
