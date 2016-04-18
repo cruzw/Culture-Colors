@@ -1,73 +1,158 @@
-let $mainGradient = $('#mainGradient');
-let $barGradient = $('#barGradient');
-let $cultureInputForm = $('#cultureInput');
-let $leftColorInputForm = $('#leftColor');
-let $rightColorInputForm = $('#rightColor');
+/*
+ * jQuery References
+ */
 
-let cultures = [
-    'Western/American',
-    'Japanese',
-    'Hindu',
-    'Native American',
-    'Chinese',
-    'Asian',
-    'Eastern European',
-    'Muslim',
-    'African',
-    'South American'
-];
+var $mainGradient = $('#mainGradient');
+var $barGradient = $('#barGradient');
+var $cultureInputForm = $('#cultureInput');
+var $leftColorInputForm = $('#leftColor');
+var $rightColorInputForm = $('#rightColor');
+var $leftHex = $('#leftHex');
+var $rightHex = $('#rightHex');
+var $cssDiv = $('#css');
 
-// map out cultures to 'Culture' form input options
-cultures.forEach(function(cult) {
-    $cultureInputForm.append('<option value="' + cult + '">' + cult + '</option>')
-});
+/*
+ * State
+ */
 
-// event listener for 'Culture' input selection
-$cultureInputForm.change(function(e) {
-    console.log($cultureInputForm.val());
-});
+var state = {
+    culture_data: {
+        'Western': western,
+        'Asian': asian,
+        'Japanese': asian,
+        'Hindu': asian,
+        'Native American': asian,
+        'Chinese': asian,
+        'Asian': asian,
+        'Eastern European': asian,
+        'Muslim': asian,
+        'African': asian,
+        'South American': asian
+    },
+    current_culture: 'Western'
+};
 
-// event listener for 'Left Color' input selection
-$leftColorInputForm.change(function(e) {
-    updateGradient()
-});
+/*
+ * Initialization
+ */
 
-// event listener for 'Right Color' input selection
-$rightColorInputForm.change(function(e) {
-    updateGradient()
-});
+$(document).ready(mainFn);
 
+function mainFn() {
+    populateCultureFormInput();
+    populateCultureThemeInputs(state.culture_data['Western']);
+    randomValueUpdate();
+    updateGradientFromForm();
+    updateHexValues();
+    updateDisplayCSS();
+    startEventListeners();
+}
 
-// initialization
-populateColorThemes(westernCulture);
-$leftColorInputForm.val("Earthy");
-$rightColorInputForm.val("Nature");
-updateGradient();
+/*
+ * event listeners for culture, left color, right color
+ */
 
-// clear 'Left Color'/'Right Color' form inputs, and (re)populate color themes;
-function populateColorThemes(culture) {
-    $leftColorInputForm.empty();
-    $rightColorInputForm.empty();
-    Object.keys(culture).sort().forEach(function(key) {
-        $leftColorInputForm.append('<option value="' + key + '">' + key + '</option>')
-        $rightColorInputForm.append('<option value="' + key + '">' + key + '</option>')
+ function startEventListeners() {
+   cultureInputChange();
+   colorInputChanges();
+ }
+
+ function cultureInputChange() {
+   $cultureInputForm.change(function(e) {
+       state.current_culture = $cultureInputForm.val();
+       populateCultureThemeInputs(state.culture_data[state.current_culture]);
+       randomValueUpdate();
+       updateGradientFromForm();
+       updateHexValues();
+   });
+ }
+
+function colorInputChanges() {
+  $leftColorInputForm.change(function(e) {
+      updateGradientFromForm();
+      updateDisplayCSS();
+      updateHexValues();
+  });
+  $rightColorInputForm.change(function(e) {
+      updateGradientFromForm();
+      updateDisplayCSS();
+      updateHexValues();
+  });
+}
+
+function updateHexValues() {
+  var current_culture_data = state.culture_data[state.current_culture];
+  $rightHex.text(current_culture_data[$rightColorInputForm.val()])
+  $leftHex.text(current_culture_data[$leftColorInputForm.val()]);
+}
+
+/*
+ * Culture
+ */
+
+ function populateCultureFormInput() {
+     Object.keys(state.culture_data).forEach(function(culture) {
+         $cultureInputForm.append('<option value="' + culture + '">' + culture + '</option>');
+     });
+ }
+
+function populateCultureThemeInputs(culture_data) {
+    clearColorThemeInputs();
+    Object.keys(culture_data).sort().forEach(function(key) {
+        $leftColorInputForm.append('<option value="' + key + '">' + key + '</option>');
+        $rightColorInputForm.append('<option value="' + key + '">' + key + '</option>');
     })
 }
 
-// update gradients from form
-function updateGradient() {
-    let leftColor = grabColor('left')
-    let rightColor = grabColor('right')
-    updateMainAndBar(leftColor, rightColor)
+function clearColorThemeInputs() {
+    $leftColorInputForm.empty();
+    $rightColorInputForm.empty();
 }
 
-function updateMainAndBar(leftColor, rightColor) {
-    $mainGradient.css('background', 'linear-gradient(to right, ' + leftColor + ', ' + rightColor + ')');
-    $barGradient.css('background', 'linear-gradient(to right, ' + leftColor + ' 50%, ' + rightColor + ' 50%)')
+/*
+ * Gradient Updating
+ */
+
+function updateGradientFromForm() {
+    var left_color = grabColor('LEFT');
+    var right_color = grabColor('RIGHT');
+    updateMainGradientAndBarGradient(left_color, right_color);
 }
 
-// returns current color given a side of gradient
 function grabColor(side) {
-    if (side === 'left') return westernCulture[$leftColorInputForm.val()];
-    if (side === 'right') return westernCulture[$rightColorInputForm.val()];
+    var current_culture_data = state.culture_data[state.current_culture];
+    if (side === 'LEFT') return current_culture_data[$leftColorInputForm.val()];
+    if (side === 'RIGHT')return current_culture_data[$rightColorInputForm.val()];
+}
+
+function updateMainGradientAndBarGradient(leftColor, rightColor) {
+    $mainGradient.css('background', 'linear-gradient(to right, ' + leftColor + ', ' + rightColor + ')');
+    $barGradient.css('background', 'linear-gradient(to right, ' + leftColor + ' 50%, ' + rightColor + ' 50%)');
+}
+
+/*
+* CSS display
+*/
+
+function updateDisplayCSS() {
+  var css_background = $mainGradient.css('background');
+  var css_prefix = 'rgba(0, 0, 0, 0)';
+  var css_suffix = 'repeat scroll 0% 0% / auto padding-box border-box';
+  var trimmed_css_background = css_background.replace(css_prefix, '').replace(css_suffix, '');
+  $cssDiv.text('background: ' + trimmed_css_background)
+}
+
+/*
+* random updating of gradient
+*/
+
+function randomValueUpdate() {
+  $leftColorInputForm.val(randomSelection());
+  $rightColorInputForm.val(randomSelection());
+}
+
+function randomSelection() {
+  var options = $("#leftColor > option");
+  var rand = (Math.floor(Math.random()* $("#leftColor > option").length));
+  return options[rand].value;
 }

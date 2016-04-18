@@ -1,4 +1,12 @@
-let westernCulture = {
+let asian = {
+  'Beauty':'#c0392b',
+  'Anger': '#000000',
+  'Authority': '#9b59b6',
+  'Cold': '#E91E63',
+  'Children':'#2980b9'
+}
+
+let western = {
   'Anger':'#c0392b',
   'Authority': '#000000',
   'Beauty': '#9b59b6',
@@ -33,7 +41,7 @@ let westernCulture = {
   'Marriage': '#ecf0f1',
   'Modesty':'#8e44ad',
   'Money':'#f1c40f',
-  'Mourning':'#000',
+  'Mourning':'#000000',
   'Mystery':'#8e44ad',
   'Nature':'#2ecc71',
   'Passion':'#e74c3c',
@@ -45,7 +53,7 @@ let westernCulture = {
   'Reliable':'#795548',
   'Repels Evil':'#f1c40f',
   'Respect':'#7f8c8d',
-  'Style':'#000',
+  'Style':'#000000',
   'Truce':'#ecf0f1',
   'Unhappiness':'#2980b9',
   'Virtue':'#8e44ad',
