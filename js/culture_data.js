@@ -1,4 +1,4 @@
-let asian = {
+var asian = {
   'Beauty':'#c0392b',
   'Anger': '#000000',
   'Authority': '#9b59b6',
@@ -6,7 +6,7 @@ let asian = {
   'Children':'#2980b9'
 }
 
-let western = {
+var western = {
   'Anger':'#c0392b',
   'Authority': '#000000',
   'Beauty': '#9b59b6',
