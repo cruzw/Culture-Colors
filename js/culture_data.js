@@ -1,4 +1,4 @@
-var RED = '#E75C3C',
+var RED = '#E74C3C',
     ORANGE = '#E67E22',
     PURPLE = '#9B59B6',
     BLUE = '#2980B9',
