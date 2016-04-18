@@ -18,16 +18,16 @@ var $cssDiv = $('#css');
 var state = {
     culture_data: {
         'Western': western,
+        'Japanese': japanese,
+        'Hindu': hindu,
+        'Native American': native_american,
         'Asian': asian,
-        'Japanese': asian,
-        'Hindu': asian,
-        'Native American': asian,
-        'Chinese': asian,
+        'Chinese': chinese,
         'Asian': asian,
-        'Eastern European': asian,
-        'Muslim': asian,
-        'African': asian,
-        'South American': asian
+        'Eastern European': eastern_european,
+        'Muslim': muslim,
+        'African': african,
+        'South American': south_american
     },
     current_culture: 'Western'
 };
