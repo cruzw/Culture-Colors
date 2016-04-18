@@ -2,24 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Cultural Color Generator</title>
-    <meta name="description" content="gradient generator based off an infographic displaying the meaning of colors in different cultures">
+    <title>Culture Colors: Gradient Generator</title>
+    <meta name="description" content="Create a CSS color gradient to reflect cultural ideas and emotions.">
     <meta name="author" content="gcwelborn">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,600" rel="stylesheet" type="text/css">
+=======
+    <link href="css/main.min.css" rel="stylesheet">
+>>>>>>> origin/master
 </head>
-
 <body>
     <div class="container">
         <div id="header" class="row">
-            <h1>Colours in Culture: Gradient Generator</h1>
-            <p>Create a gradient of colors to reflect cultural ideas and emotions</p>
+            <h1>Culture Colors:</h1>
+            <h2>A Gradient Generator</h2>
+            <span data-inline-tweet data-inline-tweet-via="gcwelborn" data-inline-tweet-url="http://CultureColors.xyz">Create a color gradient to reflect cultural ideas and emotions</span>
+            <br/>
             <a href="http://www.informationisbeautiful.net/visualizations/colours-in-cultures/"
-            class="button button-primary">InfoGraphic</a>
+            class="button button-primary">InfoGraphic Inspiration</a>
         </div>
         <div id="gradient">
-            <canvas id="mainGradient"></canvas>
-            <canvas id="barGradient"></canvas>
+            <div id="mainGradient"></div>
+            <div id="barGradient">
+                <span id="leftHex"></span>
+                <span id="rightHex"></span>
+            </div>
         </div>
         <div id="controls" class="row">
             <div class="four columns">
@@ -35,15 +43,30 @@
                 <select class="u-full-width" id="rightColor"></select>
             </div>
         </div>
-        <div id="css"></div>
+        <div class="row">
+          <h5 id="cssTitle">CSS Output</h5>
+          <p id="css"></p>
+        </div>
+        <div class="row">
+          <div class="share-buttons">
+					<a href="https://github.com/gcwelborn/Colors-in-Culture" target="_blank" title="Github">
+            <i class="fa fa-github-square fa-3x"></i>
+          </a>
+			</div>
+        </div>
     </div>
+    <footer>
+      <span>made with <a href="https://twitter.com/gcwelborn"><i id="heart" class="fa fa-heart"></i></a> in Los Angeles<span>
+    </footer>
     <link rel="stylesheet" href="css/main.min.css">
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"
             integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
             crossorigin="anonymous">
-            </script>
-    <script src="js/cultures/western.js"></script>
+    </script>
+    <script src="js/culture_data.js"></script>
     <script src="js/main.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,600" rel="stylesheet">
+    <script src="js/extras.js"></script>
 </body>
-
 </html>
