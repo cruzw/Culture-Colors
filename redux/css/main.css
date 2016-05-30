@@ -1,0 +1,114 @@
+/* Everything */
+
+body, html {
+	font-family: 'Montserrat', sans-serif;
+}
+
+#main {
+	display:flex;
+	min-height: 100vh;
+	flex:1;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Header */
+
+header {
+	display: flex;
+	min-width: 100vw;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	background: black;
+	color: white;
+	padding-bottom: 25px;
+}
+
+h1 {
+	margin-bottom: 0;
+}
+
+h2 {
+	margin: 10px 0;
+}
+
+header span {
+	max-width: 300px;
+}
+
+[data-inline-tweet] a {
+		text-decoration: none;
+		color: #FFF;
+}
+[data-inline-tweet] a span {
+		border-bottom: 1px dotted rgb(0,172,237);
+		font-style: italic;
+		margin-right: 10px;
+}
+[data-inline-tweet] a:hover span {
+		background-color: rgb(0,172,237);
+		color: white;
+}
+
+/* Controller */
+
+#controller {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding-bottom: 5vh;
+}
+
+#controller a {
+	margin: 5px 0px 15px 0;
+	color: grey;
+}
+
+#controller i {
+	padding: 7px 15px;
+	border-radius: 5px;
+	background: black;
+	color: white;
+	margin: 10px;
+}
+
+#controller i:hover {
+	background: white;
+	color: black;
+}
+
+#controller i:active {
+	background: yellow;
+	color: black;
+}
+
+select {
+	width: 150px;
+	height: 40px;
+	margin: 15px 0;
+	border: 3px solid white;
+	border-radius: 1px;
+	background: lightgrey;
+}
+
+select:hover {
+	border: 3px solid black;
+}
+
+/* Footer */
+
+footer {
+	display: flex;
+	height: 40px;
+	width: 100vw;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	color: white;
+}
