@@ -267,3 +267,16 @@ var south_american = {
     'Success': RED,
     'Trouble': BLUE
 };
+
+var cultures = {
+  'Western': western,
+  'Japanese': japanese,
+  'Hindu': hindu,
+  'Native American': native_american,
+  'Chinese': chinese,
+  'Asian': asian,
+  'Eastern European': eastern_european,
+  'Muslim': muslim,
+  'African': african,
+  'South American': south_american
+};
