@@ -1,3 +1,4 @@
+// src (for most): https://flatuicolors.com/
 var RED = '#E74C3C',
     ORANGE = '#E67E22',
     PURPLE = '#9B59B6',
@@ -11,6 +12,9 @@ var RED = '#E74C3C',
     WHITE = '#ECF0F1',
     BLACK = '#000000',
     BROWN = '#795548';
+
+// infographic inspiration:
+// http://www.informationisbeautiful.net/visualizations/colours-in-cultures/
 
 var western = {
     'Anger': RED,
@@ -268,6 +272,7 @@ var south_american = {
     'Trouble': BLUE
 };
 
+// String->Object lookup table
 var cultures = {
   'Western': western,
   'Japanese': japanese,
@@ -280,3 +285,6 @@ var cultures = {
   'African': african,
   'South American': south_american
 };
+
+// alphabetized array of cultures
+var cultures_list = ["African", "Asian", "Chinese", "Eastern European", "Hindu", "Japanese", "Muslim", "Native American", "South American", "Western"];
