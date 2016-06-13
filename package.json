@@ -4,8 +4,10 @@
   "description": "Create a CSS color gradient to reflect two separate cultural ideas and emotions.",
   "main": "index.html",
   "scripts": {
-      "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-      "build-css": "node-sass --include-path scss css/main.scss | cleancss -o css/main.min.css"
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "build-css": "node-sass --include-path scss css/main.scss | cleancss -o css/main.min.css",
+    "test": "node test.js | faucet",
+    "test-prod": "TESTING_URL=PRODUCTION node test.js | faucet"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/gcwelborn/Colors-in-Culture/issues"
   },
-  "homepage": "https://github.com/gcwelborn/Colors-in-Culture#readme"
+  "homepage": "https://github.com/gcwelborn/Colors-in-Culture#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "faucet": "0.0.1",
+    "nightmare": "^2.5.1",
+    "tape": "^4.5.1"
+  }
 }
