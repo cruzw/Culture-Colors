@@ -41,9 +41,12 @@ function dispatch_actions_and_gather_pageInfo() {
 
     let test_background = document.body.style.background;
     let test_state = store.getState();
+    let left_hex = document.getElementById('left_color_hex').innerText;
+    let right_hex = document.getElementById('right_color_hex').innerText;
+    let hex_values_displayed = [left_hex, right_hex]
 
     //  return Background, Redux state, and culture_data.js object lookup
-    return { test_background, test_state, cultures}
+    return { test_background, test_state, cultures, hex_values_displayed}
 }
 
 // receives page_info from nightmare.evaluate(),
@@ -51,6 +54,7 @@ function dispatch_actions_and_gather_pageInfo() {
 function test_suite(page_info) {
     let actual_background = page_info.test_background;
     let actual_state = page_info.test_state;
+    let actual_hexes = page_info.hex_values_displayed;
     let expected_background = "linear-gradient(to right, rgb(41, 128, 185), rgb(231, 76, 60))";
     let expected_state = { culture: 'Western', first_value: 'Cold', 'second_value': 'Anger' };
 
@@ -70,10 +74,18 @@ function test_suite(page_info) {
       let cultures = Object.keys(page_info.cultures);
       T.plan(1);
       T.equal(cultures.length, 10);
+    });
+
+    test('Hex values match are shown and match state', T => {
+      T.plan(4);
+      T.equal(actual_hexes[0], '#2980B9');
+      T.notEqual(actual_hexes[0], null);
+      T.equal(actual_hexes[1], '#E74C3C');
+      T.notEqual(actual_hexes[1], null);
     })
 
     // if testing localhost, shutdown server after testing
     test.onFinish(() => {
       if (localhost) localhost.close();
-    })
+    });
 }

@@ -25,6 +25,7 @@ var store = Redux.createStore(reducer);
   populateOptions();
   populateCultures();
   synchronizeSelectInputs();
+  updateCurrentHexToDOM()
   store.subscribe(render);
   console.log('INIT: ', store.getState());
   shuffle_button.addEventListener('click', dispatchShuffle);
@@ -35,6 +36,7 @@ function render() {
   updateBackgroundGradient();
   populateOptions();
   synchronizeSelectInputs();
+  updateCurrentHexToDOM();
   console.log('RENDER: ', store.getState());
 }
 
@@ -157,4 +159,13 @@ function randomValue(culture) {
 function randomCulture() {
   var rand_key = Math.floor(Math.random() * cultures_list.length);
   return cultures_list[rand_key];
+}
+
+// object lookup for current state's hex values, renders/updates to DOM
+function updateCurrentHexToDOM() {
+  var curr_state = store.getState();
+  var left_color = cultures[curr_state.culture][curr_state.first_value];
+  var right_color = cultures[curr_state.culture][curr_state.second_value];
+  document.getElementById('left_color_hex').innerText = left_color;
+  document.getElementById('right_color_hex').innerText = right_color;
 }
