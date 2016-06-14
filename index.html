@@ -44,9 +44,11 @@
       </div> -->
       <label for="culture">culture</label>
       <select id="culture" onchange="cultureSelectHandler(event)"></select>
-      <label for="first_value">left color</label>
+      <label for="first_value">left color:&nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="left_color_hex"></span></label>
       <select id="first_value" onchange="valueSelectHandler(event)"></select>
-      <label for="second_value">right color</label>
+      <label for="second_value">right color:&nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="right_color_hex"></span></label>
       <select id="second_value" onchange="valueSelectHandler(event)"></select>
       <div style="display:flex">
         <a><i id="shuffle" class="fa fa-random fa-2x" aria-hidden="true"></i></a>
