@@ -76,7 +76,7 @@ function test_suite(page_info) {
       T.equal(cultures.length, 10);
     });
 
-    test('Hex values match are shown and match state', T => {
+    test('Hex values are shown and match state', T => {
       T.plan(4);
       T.equal(actual_hexes[0], '#2980B9');
       T.notEqual(actual_hexes[0], null);
