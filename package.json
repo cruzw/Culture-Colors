@@ -4,14 +4,16 @@
   "description": "Create a CSS color gradient to reflect two separate cultural ideas and emotions.",
   "main": "index.html",
   "scripts": {
-    "start": "webpack --watch && npm run watch-css",
-    "test": "node test.js | faucet",
-    "test-prod": "TESTING_URL=PRODUCTION node test.js | faucet",
+    "start": "npm run webpack & npm run watch-css",
+    "webpack-prod": "NODE_ENV=production webpack --progress --colors --watch",
+    "webpack": "webpack --progress --colors --watch",
     "watch-css": "nodemon -e scss -x \"npm run css-workflow\"",
     "css-workflow": "npm run sass | npm run postcss | npm run cleancss",
     "sass": "node-sass --include-path scss ./css/main.scss",
     "postcss": "postcss --use autoprefixer",
-    "cleancss": "cleancss -o ./css/main.min.css"
+    "cleancss": "cleancss -o ./css/main.min.css",
+    "test": "node test.js | faucet",
+    "test-prod": "TESTING_URL=PRODUCTION node test.js | faucet"
   },
   "repository": {
     "type": "git",
