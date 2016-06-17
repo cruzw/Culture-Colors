@@ -138,12 +138,16 @@ function valueSelectHandler(event) {
 }
 
 // handler for left/right Values, dispatches action for culture change
-function cultureSelectHandler(event) {
+function cultureSelectHandler(event){
   store.dispatch({
     type: 'CULTURE_CHANGE',
     culture: event.target.value
   });
 }
+
+document.getElementById('culture').onchange = cultureSelectHandler;
+document.getElementById('first_value').onchange = valueSelectHandler;
+document.getElementById('second_value').onchange = valueSelectHandler;
 
 // handler for shuffle button, shuffles state
 function dispatchShuffle(e) {

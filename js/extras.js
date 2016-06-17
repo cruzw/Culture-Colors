@@ -17,7 +17,7 @@ module.exports = function() {
     var updateInterval = 1000;
     setInterval(function changeHeartColor() {
         if (!flatUIColors[counter]) counter = 0
-        heart.style.color = flatUIColors[counter++]
+        $heart.style.color = flatUIColors[counter++]
     }, updateInterval);
     // inlineTweet.js
     function buildInlineTweet(e) {
