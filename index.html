@@ -6,10 +6,9 @@
   <meta name="description" content="Create a CSS color gradient to reflect two separate cultural ideas and emotions.">
   <meta name="author" content="Cruz Welborn">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" media="screen" charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,600" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="screen" charset="utf-8">
-  <link rel="stylesheet" href="css/main.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="css/main.min.css" media="screen" charset="utf-8">
   <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
@@ -41,13 +40,17 @@
       <label for="culture">culture</label>
       <select id="culture" onchange="cultureSelectHandler(event)"></select>
       <label for="first_value">left:&nbsp;&nbsp;&nbsp;&nbsp;
-        <span id="left_color_hex"></span></label>
+        <span id="left_color_hex"></span>
+      </label>
       <select id="first_value" onchange="valueSelectHandler(event)"></select>
       <label for="second_value">right:&nbsp;&nbsp;&nbsp;&nbsp;
-        <span id="right_color_hex"></span></label>
+        <span id="right_color_hex"></span>
+      </label>
       <select id="second_value" onchange="valueSelectHandler(event)"></select>
       <div style="display:flex">
-        <a><i id="shuffle" class="fa fa-random fa-2x" aria-hidden="true"></i></a>
+        <a>
+          <i id="shuffle" class="fa fa-random fa-2x" aria-hidden="true"></i>
+        </a>
         <a href="https://github.com/gcwelborn/Colors-in-Culture" target="_blank" title="Github">
             <i class="fa fa-github-alt fa-2x"></i>
         </a>
@@ -64,8 +67,5 @@
     </footer>
   </div>
 </body>
-<script src="https://npmcdn.com/redux@3.5.2/dist/redux.min.js" charset="utf-8"></script>
-<script src="js/culture_data.js" charset="utf-8"></script>
-<script src="js/main.js" charset="utf-8"></script>
-<script src="js/extras.js" charset="utf-8"></script>
+<script src="build/app.min.js" charset="utf-8"></script>
 </html>
