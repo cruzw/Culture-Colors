@@ -22,6 +22,7 @@ module.exports = {
     path: __dirname + "/build",
     filename: "app.min.js"
   },
+  watch: true,
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),

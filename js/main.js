@@ -6,7 +6,7 @@ const cultures_list = require('./culture_data').cultures_list;
 const select_culture = document.getElementById('culture');
 const select_first_value = document.getElementById('first_value');
 const select_second_value = document.getElementById('second_value');
-const shuffle_button = document.getElementById('shuffle');
+let shuffle_button = document.getElementById('shuffle');
 
 // initial Cultures and Values chosen at random
 const initial_culture = randomCulture();
@@ -17,7 +17,8 @@ const initial_state = {
 };
 
 // redux, see reducer
-var store = Redux.createStore(reducer);
+import { createStore } from 'redux';
+let store = createStore(reducer);
 
 // initial application setup
 (function init(){
@@ -57,7 +58,7 @@ function reducer(state, action) {
       return newState(action.culture, randomValue(action.culture), randomValue(action.culture))
 
     case 'VALUE_CHANGE':
-      var prev_store = store.getState();
+      let prev_store = store.getState();
       if (action.side === 'LEFT') {
         return newState(prev_store.culture, action.value, prev_store.second_value)
       } else if (action.side === 'RIGHT') {
@@ -67,7 +68,7 @@ function reducer(state, action) {
       }
 
     case 'SHUFFLE':
-      var rand_cult = randomCulture();
+      let rand_cult = randomCulture();
       return newState(rand_cult, randomValue(rand_cult), randomValue(rand_cult))
 
     default:
