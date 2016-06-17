@@ -1,14 +1,14 @@
 // src (for most): https://flatuicolors.com/
-var RED = '#E74C3C',
+const RED = '#E74C3C',
     ORANGE = '#E67E22',
     PURPLE = '#9B59B6',
     BLUE = '#2980B9',
     PINK = '#E91E63',
     YELLOW = '#F1C40F',
-    GOLD = '#F39C12'
+    GOLD = '#F39C12',
     GREEN = '#2ECC71',
     GREY = '#7F8C8D',
-    SILVER = '#BDC3C7'
+    SILVER = '#BDC3C7',
     WHITE = '#ECF0F1',
     BLACK = '#000000',
     BROWN = '#795548';
@@ -16,7 +16,7 @@ var RED = '#E74C3C',
 // infographic inspiration:
 // http://www.informationisbeautiful.net/visualizations/colours-in-cultures/
 
-var western = {
+const western = {
     'Anger': RED,
     'Authority': BLACK,
     'Beauty': PURPLE,
@@ -69,7 +69,7 @@ var western = {
     'Virtue': PURPLE
 };
 
-var japanese = {
+const japanese = {
     'Art/Creativity': RED,
     'Bad Luck': BLACK,
     'Balance': ORANGE,
@@ -122,7 +122,7 @@ var japanese = {
     'Wisdom': PURPLE
 };
 
-var hindu = {
+const hindu = {
     'Anger': BLACK,
     'Art/Creativity': BLUE,
     'Compassion': GREEN,
@@ -155,7 +155,7 @@ var hindu = {
     'Wisdom': PURPLE
 };
 
-var native_american = {
+const native_american = {
     'Balance': BLACK,
     'Cold': BLUE,
     'Danger': YELLOW,
@@ -179,7 +179,7 @@ var native_american = {
     'Wisdom': BROWN
 };
 
-var chinese = {
+const chinese = {
     'Celebration': BLACK,
     'Death': WHITE,
     'Earthy': BROWN,
@@ -202,7 +202,7 @@ var chinese = {
     'Truce': WHITE,
 };
 
-var asian = {
+const asian = {
     'Balance': GREEN,
     'Children': WHITE,
     'Eternity': GREEN,
@@ -222,7 +222,7 @@ var asian = {
     'Success': RED
 };
 
-var eastern_european = {
+const eastern_european = {
     'Anger': RED,
     'Heat': RED,
     'Beauty': RED,
@@ -240,7 +240,7 @@ var eastern_european = {
     'Wisdom': BLUE
 };
 
-var muslim = {
+const muslim = {
     'Death': SILVER,
     'God': GREEN,
     'Good Luck': GREEN,
@@ -253,7 +253,7 @@ var muslim = {
     'Truce': SILVER
 };
 
-var african = {
+const african = {
     'Anger': RED,
     'Good Luck': RED,
     'Religion': GREEN,
@@ -264,7 +264,7 @@ var african = {
     'Truce': GREY
 };
 
-var south_american = {
+const south_american = {
     'Danger': RED,
     'Death': GREEN,
     'Mourning': PURPLE,
@@ -273,7 +273,7 @@ var south_american = {
 };
 
 // String->Object lookup table
-var cultures = {
+const cultures = {
   'Western': western,
   'Japanese': japanese,
   'Hindu': hindu,
@@ -287,4 +287,8 @@ var cultures = {
 };
 
 // alphabetized array of cultures
-var cultures_list = ["African", "Asian", "Chinese", "Eastern European", "Hindu", "Japanese", "Muslim", "Native American", "South American", "Western"];
+const cultures_list = ["African", "Asian", "Chinese", "Eastern European", "Hindu", "Japanese", "Muslim", "Native American", "South American", "Western"];
+
+
+exports.cultures = cultures;
+exports.cultures_list = cultures_list;

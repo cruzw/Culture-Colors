@@ -41,13 +41,17 @@
       <label for="culture">culture</label>
       <select id="culture" onchange="cultureSelectHandler(event)"></select>
       <label for="first_value">left:&nbsp;&nbsp;&nbsp;&nbsp;
-        <span id="left_color_hex"></span></label>
+        <span id="left_color_hex"></span>
+      </label>
       <select id="first_value" onchange="valueSelectHandler(event)"></select>
       <label for="second_value">right:&nbsp;&nbsp;&nbsp;&nbsp;
-        <span id="right_color_hex"></span></label>
+        <span id="right_color_hex"></span>
+      </label>
       <select id="second_value" onchange="valueSelectHandler(event)"></select>
       <div style="display:flex">
-        <a><i id="shuffle" class="fa fa-random fa-2x" aria-hidden="true"></i></a>
+        <a>
+          <i id="shuffle" class="fa fa-random fa-2x" aria-hidden="true"></i>
+        </a>
         <a href="https://github.com/gcwelborn/Colors-in-Culture" target="_blank" title="Github">
             <i class="fa fa-github-alt fa-2x"></i>
         </a>
@@ -65,7 +69,5 @@
   </div>
 </body>
 <script src="https://npmcdn.com/redux@3.5.2/dist/redux.min.js" charset="utf-8"></script>
-<script src="js/culture_data.js" charset="utf-8"></script>
-<script src="js/main.js" charset="utf-8"></script>
-<script src="js/extras.js" charset="utf-8"></script>
+<script src="build/app.min.js" charset="utf-8"></script>
 </html>
