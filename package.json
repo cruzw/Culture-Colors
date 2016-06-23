@@ -12,8 +12,7 @@
     "sass": "node-sass --include-path scss ./css/main.scss",
     "postcss": "postcss --use autoprefixer",
     "cleancss": "cleancss -o ./css/main.min.css",
-    "test": "node test.js | faucet",
-    "test-prod": "TESTING_URL=PRODUCTION node test.js | faucet"
+    "test": "karma start karma.conf.js --single-run"
   },
   "repository": {
     "type": "git",
@@ -34,14 +33,16 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "clean-css": "^3.4.18",
-    "express": "^4.13.4",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^1.0.1",
+    "karma-cli": "^1.0.0",
     "karma-firefox-launcher": "^1.0.0",
     "karma-ie-launcher": "^1.0.0",
     "karma-jasmine": "^1.0.2",
+    "karma-opera-launcher": "^1.0.0",
     "karma-safari-launcher": "^1.0.0",
+    "karma-script-launcher": "^1.0.0",
     "node-sass": "^3.7.0",
     "nodemon": "^1.9.2",
     "postcss-cli": "^2.5.2",
